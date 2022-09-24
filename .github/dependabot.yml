@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # "This option has no impact on security updates, which have a separate, internal limit of ten open pull requests."
+    open-pull-requests-limit: 0

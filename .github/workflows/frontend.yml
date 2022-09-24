@@ -1,0 +1,74 @@
+name: Frontend
+
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+    branches: [main, development]
+
+env:
+  NODE_OPTIONS: "--max_old_space_size=4096"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: yarn install
+      - name: Build (ignore lint; includes typecheck)
+        run: yarn build-nocheck
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: yarn install
+      - name: ESLint
+        run: yarn lint
+      - name: Prettier Check (read this to see the issue)
+        run: yarn prettier:check || true # Yes, it's inefficient, but better for debugging failed builds
+      - name: Prettier (see the diff)
+        run: yarn prettier:fix # We want to see the diff of the thing prettier fixed
+      # - name: Registry test
+      #   run: ./scripts/generate-registry.sh
+      - name: git diff
+        run: git --no-pager diff
+      - name: Check that working tree is clean (no uncommitted registry changes)
+        run: git diff-files --exit-code
+      - uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.MAINNET_TVL_SNAPSHOTS_RSA }}
+
+  # forced-corn:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/cache@v2
+  #       with:
+  #         path: "**/node_modules"
+  #         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: "16"
+  #     - uses: webfactory/ssh-agent@v0.5.4
+  #       with:
+  #         ssh-private-key: ${{ secrets.MAINNET_TVL_SNAPSHOTS_RSA }}
+  #     - run: whoami
+  #     - run: yarn install
+  #     - run: git config --global user.email "noreply@friktionlabs.com"
+  #     - run: git config --global user.name "Friktion Bot"
+  #     - name: Snapshot tvl and uploade ot mainnet-tvl-snapshots
+  #       run: yarn perform-snapshot

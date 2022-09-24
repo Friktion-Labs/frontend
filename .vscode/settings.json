@@ -1,0 +1,35 @@
+// stolen from https://github.com/gsoft-inc/craco/blob/4aca883ffb44b5043a349f7e70912ea2b7e17412/.vscode/settings.json
+{
+  "editor.wordWrap": "off",
+  // Turns on auto format on save for all files types.
+  // This is also required to allow Prettier to auto format files on save.
+  "editor.formatOnSave": true,
+  // Turns it off for JavaScript since we use Prettier to auto format on save.
+  "javascript.format.enable": false,
+  "javascript.validate.enable": true,
+  "json.format.enable": false,
+  // Required to allow auto format on save with Prettier + ESLint + Vetur.
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "editor.rulers": [80],
+  "eslint.alwaysShowStatus": true,
+  "sort-imports.suppress-warnings": true,
+  "search.exclude": {
+    "**/node_modules*": true
+  }
+}

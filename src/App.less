@@ -1,0 +1,567 @@
+// Previously in ant-custom.less
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/Avenir/Avenir-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/Avenir/Avenir-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./fonts/DM_Sans/DMSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./fonts/DM_Sans/DMSans-Medium.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./fonts/DM_Sans/DMSans-Bold.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter/static/Inter-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT Alpina Beta v5";
+  src: url("./fonts/GT_Alpina_Beta_v5/GT-Alpina-Beta-v5-Regular-Italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("./fonts/Neue_Montreal/NeueMontreal-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("./fonts/Neue_Montreal/NeueMontreal-Medium.otf") format("opentype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: url("./fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: url("./fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: url("./fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro";
+  src: url("./fonts/Source_Sans_Pro/SourceSansPro-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("./fonts/Recoleta/RecoletaRegular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("./fonts/Recoleta/RecoletaLight.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("./fonts/Recoleta/RecoletaSemiBold.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: url("./fonts/Recoleta/RecoletaBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("./fonts/EuclidCircularB/EuclidCircularB-Regular-WebS.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("./fonts/EuclidCircularB/EuclidCircularB-RegularItalic-WebS.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("./fonts/EuclidCircularB/EuclidCircularB-Light-WebS.ttf")
+    format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("./fonts/EuclidCircularB/EuclidCircularB-Semibold-WebS.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("./fonts/EuclidCircularB/EuclidCircularB-Bold-WebS.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+.App {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.earlyDark {
+  background-color: #000000;
+}
+
+.mediumOverlay {
+  .ant-popover-inner,
+  .ant-popover-arrow-content {
+    background: hsl(230, 15%, 25%);
+  }
+
+  .ant-popover-arrow-content::before {
+    background: linear-gradient(
+        to left,
+        hsl(230, 15%, 25%) 50%,
+        hsl(230, 15%, 25%) 50%
+      )
+      no-repeat -10px -10px;
+  }
+}
+
+.darkMediumOverlay {
+  .ant-popover-content .ant-popover-inner {
+    border-radius: 12px;
+    padding: 0 !important;
+  }
+  .ant-popover-content .ant-popover-inner-content {
+    border-radius: 12px;
+    padding: 0 !important;
+  }
+  .ant-popover-inner,
+  .ant-popover-arrow-content {
+    background: linear-gradient(180.27deg, #23242f 0.31%, #121317 99.84%);
+  }
+
+  .ant-popover-arrow-content::before {
+    background: linear-gradient(
+        to left,
+        linear-gradient(180.27deg, #23242f 0.31%, #121317 99.84%) 50%,
+        linear-gradient(180.27deg, #23242f 0.31%, #121317 99.84%) 50%
+      )
+      no-repeat -10px -10px;
+  }
+}
+
+.lightMediumOverlay {
+  .ant-popover-content .ant-popover-inner {
+    border-radius: 12px;
+    padding: 0 !important;
+  }
+  .ant-popover-content .ant-popover-inner-content {
+    border-radius: 12px;
+    padding: 0 !important;
+  }
+
+  .ant-popover-inner,
+  .ant-popover-arrow-content {
+    background: #fff;
+  }
+
+  .ant-popover-arrow-content::before {
+    background: linear-gradient(to left, #fff 50%, #fff 50%) no-repeat -10px -10px;
+  }
+}
+
+.noArrowOverlay {
+  .ant-popover-arrow {
+    display: none !important;
+  }
+
+  .ant-popover-inner,
+  .ant-popover-arrow-content {
+    background: hsl(230, 15%, 25%);
+  }
+
+  .ant-popover-arrow-content::before {
+    background: linear-gradient(
+        to left,
+        hsl(230, 15%, 25%) 50%,
+        hsl(230, 15%, 25%) 50%
+      )
+      no-repeat -10px -10px;
+  }
+}
+
+.paddedOverlay {
+  .ant-popover {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+// .darkOverlay {
+//   .ant-popover-inner {
+//     background: hsl(230, 15%, 15%);
+//   }
+//   .ant-popover-arrow {
+//     color: hsl(230, 15%, 15%);
+//   }
+// }
+
+// End ant-custom.less
+
+// transition from dark mode
+* {
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-property: background, background-color;
+}
+
+.ant-layout-header {
+  align-items: center;
+  height: 60px;
+  background: #24264c;
+  padding: 0 20px;
+  line-height: 64px;
+  display: flex;
+}
+
+.gradient-bg {
+  width: 100%;
+  height: 100%;
+  background: #24264c;
+}
+
+.App-Bar {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  top: 0px;
+  position: relative;
+  z-index: 2;
+  // background: red;
+  // background: rgba(0, 0, 0, 0.31);
+  .logo-row {
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+// .App-Bar-left {
+//   box-sizing: border-box;
+//   margin: 0px;
+//   min-width: 0px;
+//   display: flex;
+//   padding: 0px;
+//   -webkit-box-align: center;
+//   align-items: center;
+//   width: fit-content;
+// }
+
+.wallet-wrapper {
+  padding-left: 0.7rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.wallet-key {
+  padding: 0.1rem 0.5rem 0.1rem 0.7rem;
+  margin-left: 0.3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.ant-tabs-nav-scroll {
+  display: flex;
+  justify-content: center;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-tbody > tr > td.ant-table-cell-row-hover {
+  background: inherit !important;
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.wallet-key {
+  padding: 0.1rem 0.5rem 0.1rem 0.7rem;
+  margin-left: 0.3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.ant-notification {
+  a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.ant-layout-content {
+  display: flex;
+  overflow: auto;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-fill {
+  height: 100%;
+}
+
+.card-row {
+  box-sizing: border-box;
+  margin: 5px 0px;
+  min-width: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+
+  .card-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    box-sizing: border-box;
+    text-align: left;
+    margin: 0px;
+    min-width: 0px;
+    font-size: 14px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .small {
+    font-size: 11px;
+  }
+}
+
+.token-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 0px 10px;
+  margin: 5px 0px;
+}
+
+[class="ant-layout-header"] {
+  height: 16px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .exchange-card {
+    width: 360px;
+  }
+}
+
+.Toastify__progress-bar {
+  background: linear-gradient(
+    48.01deg,
+    rgb(170, 100, 255) 0.56%,
+    rgb(158, 112, 246) 14.4%,
+    rgb(125, 142, 221) 42.09%,
+    rgb(73, 189, 182) 78.67%,
+    rgb(43, 217, 159) 98.44%,
+    rgb(36, 216, 156) 99.43%
+  ) !important;
+}
+
+.Toastify__toast {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  z-index: 100001;
+}
+
+.Toastify__toast-body {
+  padding-top: 4px !important;
+}
+
+.ant-popover {
+  z-index: 100000;
+}
+
+.ant-popover-inner {
+  border-radius: 4px;
+}
+.ant-popover-inner-content {
+  padding: 12px;
+}
+
+::-moz-selection {
+  background: hsla(272, 55%, 35%);
+}
+::selection {
+  background: hsla(272, 55%, 35%);
+}
+img::selection {
+  background: hsla(272, 55%, 35%);
+}
+
+a:focus:not(.focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+a:focus {
+  border-radius: 2px;
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+reach-portal {
+  div[data-reach-dialog-overlay] {
+    z-index: 1300;
+    backdrop-filter: blur(2px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+}
+
+div[data-reach-dialog-overlay] {
+  cursor: pointer;
+}
+
+.goki-walletkit-modal-wrapper {
+  box-shadow: 0px 3px 20px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  background: linear-gradient(
+    180.27deg,
+    #23242f 0.31%,
+    #121317 99.84%
+  ) !important;
+  font-family: "Euclid Circular B" !important;
+  .wallet-adapter-modal-list .wallet-adapter-button {
+    font-family: "Euclid Circular B" !important;
+  }
+}
+
+div[data-reach-dialog-overlay] {
+  background: hsla(0, 0%, 0%, 0.8);
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Fight react dialog */
+html body {
+  overflow-y: scroll !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Solflare does a weird iframe that blocks everything */
+body > iframe {
+  z-index: 2 !important;
+}
+
+#root {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+}
+
+// Wallet dialog styles
+.walletconnect-modal__footer a {
+  color: #898d97 !important;
+}
+
+.walletconnect-modal__mobile__toggle {
+  color: #1a202c !important;
+}

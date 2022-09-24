@@ -1,0 +1,3 @@
+{
+  "deprecationNotice": "https://app.friktion.fi/mainnet-registry.json is deprecated in favor of a better alternative with CORS support: https://friktion-labs.github.io/mainnet-tvl-snapshots/friktionSnapshot.json"
+}

@@ -1,0 +1,1 @@
+export const MAX_MONTHLY_DEPOSIT = 1000;
