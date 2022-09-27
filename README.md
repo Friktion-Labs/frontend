@@ -14,6 +14,8 @@ After cloning the repo, open your terminal and change directory to this repo, th
 ```
 And now you can view the site at `http://localhost:3000`
 
+[A guide to understand this repo here](https://docs.friktion.fi/integration/open-sourced-ui)
+
 ## SDK
 Over the last 6 months, the core team has dedicated hundreds of hours into building out a SDK which enables anyone to use and compose on Friktion Volts - with great teams such as Investin, Snowflake, and Ultimate using it to build their products. This is a great chance for folks looking to become developers to enter the ecosystem!
 
