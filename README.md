@@ -30,6 +30,10 @@ Friktion’s SDK can be accessed below. If you or your team are interested in de
 
 Questions? Head to the developers channel in discord: https://discord.gg/friktion
 
+## Contribution Guidelines
+
+Read the contribution guidelines [here](/contribution.md)
+
 ## License
 
 This repo is licensed under the [Apache License 2.0](https://en.wikipedia.org/wiki/Apache_License).
