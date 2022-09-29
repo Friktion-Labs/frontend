@@ -138,25 +138,50 @@ const FooterSocialLink = styled.a`
 `;
 
 const FooterExternalLinks = styled.div`
-  display: flex;
-  flex-direction: row;
-
-  > * + * {
-    margin-top: 0;
-    margin-left: 60px;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  grid-gap: 60px;
 
   ${({ theme }) => theme.breakpoints.down("md")} {
+    gap: 24px;
+    display: flex;
     flex-direction: column;
-
-    > * + * {
-      margin-left: 0;
-      margin-top: 32px;
-    }
   }
 `;
 
 const FooterExternalLinksContainer = styled.div`
+  margin-top: 12px;
+
+  &:nth-child(4) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  &:last-child {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  ${({ theme }) => theme.breakpoints.down("md")} {
+    &:nth-child(4) {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      grid-row-start: auto;
+      grid-row-end: auto;
+    }
+
+    &:last-child {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      grid-row-start: auto;
+      grid-row-end: auto;
+    }
+  }
+
   h4 {
     font-size: 16px;
     font-weight: bold;
@@ -382,13 +407,9 @@ export const LayoutFooter: FunctionComponent<Props> = ({
             {links.map((link) => (
               <FooterExternalLinksContainer key={link.title}>
                 <h4 className="font-bold">{link.title}</h4>
-                <div className="flex flex-col space-y-1 group">
+                <div>
                   {link.items.map((item) => (
-                    <a
-                      href={item.href}
-                      className="footer-link hover:!blur-none group-hover:blur-[1px]"
-                      key={item.label}
-                    >
+                    <a href={item.href} key={item.label}>
                       {item.label}
                     </a>
                   ))}

@@ -43,9 +43,37 @@ const footerLinks = [
     ],
   },
   {
+    title: "Documentation",
+    items: [
+      { href: "https://docs.friktion.finance", label: "Homepage" },
+      {
+        href: "https://docs.friktion.fi/products/new-user-start-here",
+        label: "New user?",
+      },
+      {
+        href: "https://docs.friktion.fi/products/what-are-volts",
+        label: "What are Volts?",
+      },
+      {
+        href: "https://docs.friktion.fi/products/friktion-glossary",
+        label: "Glossary",
+      },
+    ],
+  },
+  {
+    title: "Open Source",
+    items: [
+      { href: "https://github.com/Friktion-Labs", label: "Organization" },
+      {
+        href: "https://github.com/Friktion-Labs/frontend",
+        label: "Friktion UI",
+      },
+      { href: "https://github.com/Friktion-Labs/sdk", label: "Friktion SDK" },
+    ],
+  },
+  {
     title: "Community",
     items: [
-      { href: "https://docs.friktion.finance", label: "Docs" },
       { href: "https://forum.friktion.fi", label: "Forum" },
       { href: "https://friktionlabs.medium.com", label: "Blogs" },
     ],
