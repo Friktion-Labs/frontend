@@ -12,6 +12,8 @@ After cloning the repo, open your terminal and change directory to this repo, th
 1) yarn
 2) yarn start
 ```
+*you may have to also do: `yarn global add gulp-cli`
+
 And now you can view the site at `http://localhost:3000`
 
 [A guide to understand this repo here](https://docs.friktion.fi/integration/open-sourced-ui)
